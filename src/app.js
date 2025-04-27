@@ -1,44 +1,30 @@
 const express = require('express');
-const cors = require('cors');  // 引入 CORS 库
-const mysql = require('mysql');
+const cors = require('cors');
+const db = require('./db'); // 你的数据库连接模块
+
 const app = express();
+const port = process.env.PORT || 3000;
 
-// 使用 CORS 中间件，允许所有来源访问
 app.use(cors());
+app.use(express.json());
 
-// 配置数据库连接
-const db = mysql.createConnection({
-  host: 'konata.mysql.polardb.rds.aliyuncs.com',  // 阿里云 MySQL 地址
-  user: 'konata',  // 数据库用户名
-  password: '0d000721Q@Q',  // 数据库密码
-  database: 'test999'  // 数据库名
+// 根路由
+app.get('/', (req, res) => {
+  res.send('欢迎使用 API 服务，请访问 /api/login 获取用户信息');
 });
 
-// 连接数据库
-db.connect(err => {
-  if (err) {
-    console.error('数据库连接失败:', err.stack);
-    return;
-  }
-  console.log('数据库连接成功');
-});
-
-// 设置路由，查询 login 表的数据
+// 登录接口
 app.get('/api/login', (req, res) => {
   const sql = 'SELECT id, name, password FROM login';
-  
   db.query(sql, (err, results) => {
     if (err) {
-      console.error('数据库查询失败:', err.stack);
+      console.error('数据库查询失败:', err);
       return res.status(500).json({ error: '数据库查询失败' });
     }
-    
-    // 返回查询结果
     res.json(results);
   });
 });
 
-// 启动服务器
-app.listen(3000, () => {
-  console.log('Server running at http://localhost:3000');
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
 });

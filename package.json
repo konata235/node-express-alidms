@@ -1,19 +1,17 @@
 {
   "name": "node-express-alidms",
   "version": "1.0.0",
-  "description": "Node.js + Express + Aliyun DMS Database Project",
+  "description": "Node + Express API for Aliyun DMS test",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js"
   },
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "mysql": "^2.18.1"
-  },
-  "engines": {
-    "node": "14.x"
-  },
-  "author": "Your Name",
-  "license": "ISC"
+  }
 }

@@ -1,12 +1,15 @@
 {
-  "name": "express-alidms",
+  "name": "node-express-alidms",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Node.js and Express API connected to Alibaba DMS",
+  "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "express": "^4.21.2",
+    "mysql2": "^3.14.0"
+  },
+  "author": "Konata",
+  "license": "ISC"
 }

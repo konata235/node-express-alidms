@@ -1,18 +1,25 @@
 {
   "name": "node-express-alidms",
   "version": "1.0.0",
-  "description": "Node + Express API for Aliyun DMS test",
+  "description": "Node.js Express app with MySQL",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js"
   },
-  "engines": {
-    "node": "22.x"
-  },
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "mysql": "^2.18.1",
-    "mysql2": "^3.14.1"
-  }
+    "express": "^4.17.1",
+    "mysql2": "^2.3.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konata235/node-express-alidms.git"
+  },
+  "author": "liliys",
+  "license": "MIT"
 }

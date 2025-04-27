@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login List</title>
+</head>
+<body>
+  <h1>Login List</h1>
+  <ul id="login-list"></ul>
+
+  <script>
+    // 请求后端的 API 获取数据
+    fetch('http://localhost:3000/api/login')
+      .then(response => response.json())  // 解析返回的 JSON 数据
+      .then(data => {
+        // 获取页面上的 <ul> 元素
+        const loginList = document.getElementById('login-list');
+        
+        // 循环显示每一条数据
+        data.forEach(user => {
+          const listItem = document.createElement('li');
+          listItem.textContent = `${user.name}: ${user.password}`;
+          loginList.appendChild(listItem);
+        });
+      })
+      .catch(error => console.error('请求失败:', error));  // 如果请求失败，打印错误
+  </script>
+</body>
+</html>

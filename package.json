@@ -1,15 +1,19 @@
 {
   "name": "node-express-alidms",
   "version": "1.0.0",
-  "description": "Node.js and Express API connected to Alibaba DMS",
+  "description": "Node.js + Express + Aliyun DMS Database Project",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js"
   },
   "dependencies": {
-    "express": "^4.21.2",
-    "mysql2": "^3.14.0"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
   },
-  "author": "Konata",
+  "engines": {
+    "node": "14.x"
+  },
+  "author": "Your Name",
   "license": "ISC"
 }
